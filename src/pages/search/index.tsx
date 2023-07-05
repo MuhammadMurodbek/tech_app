@@ -13,6 +13,7 @@ import { columns } from '../../helpers/table.column'
 import { tableSearch } from '../../helpers/table.search'
 import { tableList } from '../../helpers/table.list'
 import { DataType } from '../../utils/interfaces'
+import './style.css'
 
 const ProductsFilter: React.FC = () => {
 	const ref = useRef([])
@@ -56,18 +57,9 @@ const ProductsFilter: React.FC = () => {
 
 	return (
 		<>
-			<Header
-				style={{
-					width: '100%',
-					padding: 0,
-					display: 'flex',
-					alignItems: 'center',
-					justifyContent: 'space-between',
-					backgroundColor: 'white'
-				}}
-			>
+			<Header className="header-search">
 				<Input.Search
-					style={{ width: 300 }}
+					className="inp-search"
 					value={searchField}
 					placeholder="Search by name"
 					onChange={(e) =>

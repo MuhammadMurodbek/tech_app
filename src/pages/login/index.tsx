@@ -45,11 +45,7 @@ const LoginForm: React.FC = () => {
 	}
 
 	return (
-		<Row
-			align="middle"
-			justify="center"
-			style={{ width: '100%' }}
-		>
+		<Row align="middle" justify="center" className="w-100">
 			<Col>
 				<Form
 					name="normal_login"

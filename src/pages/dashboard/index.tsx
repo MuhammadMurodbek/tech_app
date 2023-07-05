@@ -8,6 +8,7 @@ import {
 } from '@ant-design/icons'
 import { Layout, Menu, Button, theme } from 'antd'
 import { Outlet, To, useNavigate } from 'react-router-dom'
+import './style.css'
 
 const { Header, Sider, Content } = Layout
 
@@ -29,7 +30,7 @@ const Dashboard: React.FC<any> = () => {
 				collapsed={collapsed}
 				theme="light"
 			>
-				<Header style={{ backgroundColor: 'white' }}>
+				<Header className="bg-white">
 					{!collapsed && <div>Dashboard</div>}
 				</Header>
 
@@ -58,13 +59,7 @@ const Dashboard: React.FC<any> = () => {
 				/>
 			</Sider>
 			<Layout>
-				<Header
-					style={{
-						padding: 0,
-						height: 'auto',
-						background: colorBgContainer
-					}}
-				>
+				<Header className="header-collapse bg-white">
 					<Button
 						type="text"
 						icon={
@@ -75,22 +70,10 @@ const Dashboard: React.FC<any> = () => {
 							)
 						}
 						onClick={() => setCollapsed(!collapsed)}
-						style={{
-							fontSize: '16px',
-							width: 42,
-							height: 42,
-							marginLeft: 14
-						}}
+						className="button-toggle"
 					/>
 				</Header>
-				<Content
-					style={{
-						margin: '24px 16px',
-						padding: '10px 0',
-						minHeight: 280,
-						background: colorBgContainer
-					}}
-				>
+				<Content className="bg-white content">
 					<div id="detail">
 						<Outlet />
 					</div>

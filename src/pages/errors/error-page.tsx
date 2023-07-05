@@ -1,17 +1,10 @@
 import React from 'react'
 import { Button, Result } from 'antd'
+import './style.css'
 
 const ErrorPage: React.FC = () => {
 	return (
-		<div
-			style={{
-				width: '100%',
-				height: '100vh',
-				display: 'flex',
-				alignItems: 'center',
-				justifyContent: 'center'
-			}}
-		>
+		<div className="wrapper">
 			<Result
 				status="404"
 				title="404"
