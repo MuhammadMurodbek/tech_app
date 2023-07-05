@@ -14,7 +14,7 @@ import { useModalStore } from '../../store/state.handler'
 import { login } from '../../api/api.requests'
 import './style.css'
 
-const App: React.FC = () => {
+const LoginForm: React.FC = () => {
 	const { state, updateAmount } = useModalStore()
 	const { loading } = state
 	const onFinish = async (values: {
@@ -68,6 +68,7 @@ const App: React.FC = () => {
 						]}
 					>
 						<Input
+							data-testid="user_input"
 							prefix={
 								<UserOutlined className="site-form-item-icon" />
 							}
@@ -84,6 +85,7 @@ const App: React.FC = () => {
 						]}
 					>
 						<Input
+							data-testid="password_input"
 							prefix={
 								<LockOutlined className="site-form-item-icon" />
 							}
@@ -121,4 +123,4 @@ const App: React.FC = () => {
 	)
 }
 
-export default App
+export default LoginForm

@@ -84,6 +84,7 @@ const Products: React.FC = () => {
 	}, [reload])
 	return (
 		<Table
+			data-testid="table_products"
 			loading={state.loading}
 			columns={columns}
 			dataSource={list}
