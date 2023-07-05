@@ -19,9 +19,5 @@ export const columns: ColumnsType<DataType> = [
 	{
 		title: 'Barcode',
 		dataIndex: 'barcode'
-	},
-	{
-		title: 'Taxable',
-		dataIndex: 'taxable'
 	}
 ]

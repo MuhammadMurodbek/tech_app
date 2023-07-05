@@ -1,8 +1,10 @@
 export function changeDelay(
 	change: any,
-	setSearchField: any,
-	setTimer: any,
-	handleChange: any,
+	setSearchField: React.Dispatch<
+		React.SetStateAction<string>
+	>,
+	setTimer: React.Dispatch<React.SetStateAction<any>>,
+	handleChange: (e: any) => void,
 	timer: any
 ) {
 	setSearchField(change)
@@ -13,6 +15,6 @@ export function changeDelay(
 	setTimer(
 		setTimeout(() => {
 			handleChange(change)
-		}, 2000)
+		}, 1300)
 	)
 }

@@ -6,7 +6,7 @@ import {
 	UserOutlined,
 	SearchOutlined
 } from '@ant-design/icons'
-import { Layout, Menu, Button, theme } from 'antd'
+import { Layout, Menu, Button, Space, Avatar } from 'antd'
 import { Outlet, To, useNavigate } from 'react-router-dom'
 import './style.css'
 
@@ -15,9 +15,6 @@ const { Header, Sider, Content } = Layout
 const Dashboard: React.FC<any> = () => {
 	const navigate = useNavigate()
 	const [collapsed, setCollapsed] = useState(false)
-	const {
-		token: { colorBgContainer }
-	} = theme.useToken()
 	const handleSwitchMenu = (e: { key: To }) => {
 		if (e.key == '/login') localStorage.clear()
 		navigate(e.key)
@@ -30,8 +27,10 @@ const Dashboard: React.FC<any> = () => {
 				collapsed={collapsed}
 				theme="light"
 			>
-				<Header className="bg-white">
-					{!collapsed && <div>Dashboard</div>}
+				<Header className="bg-white p-0">
+					{!collapsed && (
+						<div className="label">Dashboard</div>
+					)}
 				</Header>
 
 				<Menu
@@ -72,6 +71,10 @@ const Dashboard: React.FC<any> = () => {
 						onClick={() => setCollapsed(!collapsed)}
 						className="button-toggle"
 					/>
+					<Space align="center" size={'middle'}>
+						<div>Murodbek Raximjonov</div>
+						<Avatar size={36} icon={<UserOutlined />} />
+					</Space>
 				</Header>
 				<Content className="bg-white content">
 					<div id="detail">

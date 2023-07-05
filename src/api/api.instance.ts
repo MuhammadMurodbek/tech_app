@@ -26,12 +26,13 @@ request.interceptors.request.use(
 	}
 )
 
-request.interceptors.response.use(
-	(response) => response,
-	(error) => {
-		if (error.response.status === 401) {
-			window.location.replace('/login')
-			localStorage.clear()
-		}
-	}
-)
+// request.interceptors.response.use(
+// 	(response) => response,
+// 	(error) => {
+// 		if (error.response.status === 401) {
+// 			window.location.replace('/login')
+// 			localStorage.clear()
+// 		}
+// 		return error
+// 	}
+// )

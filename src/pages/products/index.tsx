@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { Table } from 'antd'
-import type { ColumnsType, TableProps } from 'antd/es/table'
+import { Table, Tag } from 'antd'
+import type { TableProps } from 'antd/es/table'
 import { variations } from '../../api/api.requests'
 import { useModalStore } from '../../store/state.handler'
+import { columns } from '../../helpers/table.column'
 
 interface DataType {
 	key: React.Key
@@ -12,31 +13,6 @@ interface DataType {
 	description?: string
 	barcode?: string
 }
-
-const columns: ColumnsType<DataType> = [
-	{
-		title: 'Name',
-		dataIndex: 'name',
-		width: '35%'
-	},
-	{
-		title: 'Supplier',
-		dataIndex: 'supplier'
-	},
-	{
-		title: 'Description',
-		dataIndex: 'description'
-	},
-	{
-		title: 'Barcode',
-		dataIndex: 'barcode'
-	},
-	{
-		title: 'Taxable',
-		dataIndex: 'taxable'
-	}
-]
-
 const onChange: TableProps<DataType>['onChange'] = (
 	pagination,
 	filters,
@@ -82,11 +58,24 @@ const Products: React.FC = () => {
 		updateAmount({ ...state, loading: true })
 		getList()
 	}, [reload])
+
+	const taxColumn = {
+		title: 'Taxable',
+		dataIndex: 'taxable',
+		render: (value: any) => {
+			return (
+				<Tag color={value ? 'success' : 'error'}>
+					{value ? 'Available' : 'Disable'}
+				</Tag>
+			)
+		}
+	}
+
 	return (
 		<Table
 			data-testid="table_products"
 			loading={state.loading}
-			columns={columns}
+			columns={[...columns, taxColumn]}
 			dataSource={list}
 			onChange={onChange}
 		/>

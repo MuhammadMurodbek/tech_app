@@ -1,7 +1,10 @@
+import { DataType } from '../utils/interfaces'
+
 export const tableSearch = (
 	e: any,
-	ref: any,
-	setList: any
+	ref: React.MutableRefObject<never[]>,
+	setList: React.Dispatch<React.SetStateAction<DataType[]>>,
+	setLoading: React.Dispatch<React.SetStateAction<boolean>>
 ) => {
 	const filterAndSortByName: any = (
 		array: any[],
@@ -24,4 +27,5 @@ export const tableSearch = (
 		e
 	)
 	setList(filteredAndSortedData)
+	setLoading(false)
 }
