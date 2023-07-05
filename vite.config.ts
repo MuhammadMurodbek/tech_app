@@ -10,7 +10,7 @@ export default defineConfig({
 		port: 4200
 	},
 	build: {
-		outDir: '../dist'
+		outDir: 'build'
 	},
 	test: {
 		globals: true,
