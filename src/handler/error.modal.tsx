@@ -1,5 +1,8 @@
 import React from 'react'
-import { useModalStore } from '../store/state.handler'
+import {
+	TState,
+	useModalStore
+} from '../store/state.handler'
 import {
 	Button,
 	Divider,
@@ -10,7 +13,12 @@ import {
 
 const ModalErrorHandler: React.FC = () => {
 	const { state, updateAmount } = useModalStore()
-	const { data: error, isOpen, showError, refresh } = state
+	const {
+		data: error,
+		isOpen,
+		showError,
+		refresh
+	}: TState | any = state
 	const handleCancel = () => {
 		updateAmount({
 			...state,

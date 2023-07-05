@@ -39,7 +39,7 @@ const LoginForm: React.FC = () => {
 				loading: false,
 				data: e,
 				showError: false,
-				refresh: () => onFinish(values)
+				refresh: onFinish
 			})
 		}
 	}

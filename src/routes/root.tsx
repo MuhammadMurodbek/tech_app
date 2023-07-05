@@ -7,7 +7,7 @@ export function loader() {
 }
 
 export default function Root() {
-	const { token } = useLoaderData()
+	const { token }: any = useLoaderData()
 	if (!token) {
 		window.location.replace('/login')
 		localStorage.clear()

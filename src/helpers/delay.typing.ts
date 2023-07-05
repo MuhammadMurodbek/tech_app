@@ -5,7 +5,7 @@ export function changeDelay(
 	>,
 	setTimer: React.Dispatch<React.SetStateAction<any>>,
 	handleChange: (e: any) => void,
-	timer: any
+	timer: null
 ) {
 	setSearchField(change)
 	if (timer) {

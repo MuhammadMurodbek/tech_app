@@ -59,7 +59,7 @@ const ProductsFilter: React.FC = () => {
 	const taxColumn = {
 		title: 'Taxable',
 		dataIndex: 'taxable',
-		render: (value: any) => {
+		render: (value: boolean) => {
 			return (
 				<Tag color={value ? 'success' : 'error'}>
 					{value ? 'Available' : 'Disable'}

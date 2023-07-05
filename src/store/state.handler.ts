@@ -1,6 +1,6 @@
 import { create } from 'zustand'
 
-interface TState {
+export interface TState {
 	showError: boolean
 	loading: boolean
 	isOpen: boolean
@@ -12,7 +12,7 @@ interface TState {
 	}: {
 		_username: string
 		_password: string
-		_subdomain: string
+		_subdomain?: string
 	}) => void
 }
 
